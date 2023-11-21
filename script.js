@@ -22,3 +22,5 @@ export function exercise02(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 }
+
+}
