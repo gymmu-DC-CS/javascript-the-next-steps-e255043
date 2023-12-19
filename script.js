@@ -44,12 +44,15 @@ export function exercise04(args) {
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+    const previousElement = input[i - 1]
 
-    // Check if the current character is a space
-    if (currentElement === " ") {
+    if (currentElement === " " && previousElement != "-") {
       count = count + 1
+    } else if (currentElement === "0") {
+      count = count - 1
     }
   }
+
   return count
 }
 export function exercise05(args) {
@@ -67,4 +70,22 @@ export function exercise05(args) {
   }
 
   return false
+}
+
+export function exercise06(args) {
+  const input = args
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    const asciiCode = currentElement.charCodeAt(0)
+    if (
+      asciiCode <= 31 ||
+      (asciiCode >= 33 && asciiCode <= 64) ||
+      (asciiCode >= 91 && asciiCode <= 96) ||
+      asciiCode >= 123
+    ) {
+      continue
+    }
+  }
 }
