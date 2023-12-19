@@ -74,6 +74,8 @@ export function exercise05(args) {
 
 export function exercise06(args) {
   const input = args
+  const result = []
+  let capitalLetters = 0
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
@@ -85,7 +87,8 @@ export function exercise06(args) {
       (asciiCode >= 91 && asciiCode <= 96) ||
       asciiCode >= 123
     ) {
-      continue
+      return true
     }
   }
+  return false
 }
